@@ -2,22 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>We Are Legion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>We Are Legion — Heroes of History Alliance</title>
+  <meta name="description" content="Heroes of History alliance since August 2024 • Consistently Top 5. Join us on Discord." />
+  <meta name="theme-color" content="#1a1033" />
+  <meta property="og:title" content="We Are Legion — Heroes of History Alliance" />
+  <meta property="og:description" content="Heroes of History alliance since August 2024 • Consistently Top 5. Join us on Discord." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wearelegion.top/" />
+  <!--
+    Note for law enforcement / security reviewers:
+    This domain is for a casual alliance in a mobile/browser game (Heroes of History).
+    It has no connection to cybercrime or the hacktivist slogan often associated with the phrase “we are legion”.
+    The Discord server hosts game coordination, chat, and community events only.
+  -->
   <style>
-    html,body{height:100%;margin:0;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0d1117;color:#e6edf3}
-    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:2rem;text-align:center}
-    a.btn{display:inline-block;padding:0.9rem 1.2rem;border:1px solid #30363d;border-radius:12px;text-decoration:none;font-weight:600}
-    a.btn:hover{background:#161b22}
+    :root{
+      --bg:#120a24;
+      --bg2:#1a1033;
+      --glow1:#6d28d9;
+      --glow2:#a855f7;
+      --text:#f5f3ff;
+      --muted:#c7bfe6;
+      --accent:#8b5cf6;
+      --accent2:#a78bfa;
+      --radius:18px;
+      --shadow:0 18px 40px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--text); min-height:100svh; display:grid; place-items:center; background:var(--bg);
+      overflow:hidden;
+    }
+    .bg{
+      position:fixed; inset:0; z-index:-2;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(139,92,246,.25), transparent 60%),
+                  radial-gradient(1100px 700px at 80% 110%, rgba(167,139,250,.18), transparent 60%),
+                  radial-gradient(circle at 50% 30%, #1a1033, #0e081b 60%, #0b0717 100%);
+    }
+    .bg::before, .bg::after{
+      content:""; position:absolute; inset:-20%; filter:blur(80px); opacity:.35; pointer-events:none;
+      background: conic-gradient(from 0deg, rgba(139,92,246,.35), rgba(167,139,250,.25), rgba(139,92,246,.35));
+      animation: spin 28s linear infinite;
+    }
+    .bg::after{ animation-duration: 40s; animation-direction: reverse; opacity:.25 }
+    @keyframes spin{ to{ transform:rotate(360deg) } }
+    .wrap{max-width:860px; width:min(92vw, 860px); text-align:center; padding:clamp(16px,3vw,28px)}
+    h1{font-size:clamp(28px,7vw,64px); line-height:1.05; margin:0 0 12px; text-shadow:0 2px 18px rgba(0,0,0,.45)}
+    .sub{color:var(--muted); margin:0 0 26px; font-size:clamp(14px,2.6vw,18px)}
+    .game{color:var(--muted); font-size:clamp(13px,2.2vw,16px); margin-bottom:26px; font-style:italic}
+    .cta{
+      --g1: var(--accent);
+      --g2: var(--accent2);
+      display:inline-block; padding:1rem 1.4rem; border-radius:var(--radius);
+      background:linear-gradient(145deg,var(--g1),var(--g2)); color:#0b1020; text-decoration:none;
+      font-weight:900; letter-spacing:.3px; box-shadow:0 22px 48px rgba(139,92,246,.35);
+      position:relative; isolation:isolate; white-space:nowrap;
+      transform: translateY(0); transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .cta:hover{ transform: translateY(-2px); box-shadow:0 26px 56px rgba(167,139,250,.45) }
+    .cta .ring{ position:absolute; inset:-7px; border-radius:inherit; border:2px solid rgba(139,92,246,.55); animation:pulse 1.7s ease-in-out infinite; z-index:-1 }
+    @keyframes pulse{ 0%{opacity:.7; transform:scale(1)} 70%{opacity:0; transform:scale(1.12)} 100%{opacity:0; transform:scale(1.12)} }
+    .about-dot{position:fixed; right:6px; bottom:6px; width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.04); opacity:.06; border:none}
+    .about-dot:focus{opacity:.7; box-shadow:0 0 0 2px rgba(255,255,255,.25)}
+    dialog{border:none; border-radius:14px; padding:18px 20px; background:#141028; color:var(--text); box-shadow:var(--shadow); max-width:min(90vw,560px)}
+    dialog::backdrop{background:rgba(0,0,0,.4)}
+    .close{margin-top:10px; background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.15); border-radius:10px; padding:.5rem .8rem}
+    @media (min-width:1600px){ .wrap{max-width:980px} h1{font-size:72px} }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <main>
-      <h1>We Are Legion</h1>
-      <p>Welcome to the alliance. Join our Discord:</p>
-      <p><a class="btn" href="http://discord.com/invite/VKQFr2bMtX" rel="noopener">Join Discord</a></p>
-    </main>
-  </div>
+  <div class="bg" aria-hidden="true"></div>
+  <main class="wrap" id="main">
+    <h1>We Are Legion</h1>
+    <p class="sub"><strong>Alliance founded in August 2024</strong> • <strong>Consistently Top 5</strong></p>
+    <p class="game">Part of the <strong>Heroes of History</strong> game universe</p>
+    <a id="join" class="cta" href="http://discord.com/invite/VKQFr2bMtX" rel="noopener" target="_blank">
+      <span class="ring" aria-hidden="true"></span>
+      Join Our Discord
+    </a>
+  </main>
+  <button class="about-dot" id="aboutDot" aria-label="About this domain"></button>
+  <dialog id="aboutDialog">
+    <strong>About this domain</strong>
+    <p style="margin:8px 0 0">This site belongs to a casual alliance for a mobile/browser game (Heroes of History). It is unrelated to cybercrime, hacktivism, or any organization using the phrase “we are legion.” The Discord server is for gameplay coordination and community chat.</p>
+    <button class="close" id="closeAbout">Close</button>
+  </dialog>
+  <script>
+    const aboutDot = document.getElementById('aboutDot');
+    const dlg = document.getElementById('aboutDialog');
+    aboutDot.addEventListener('click', ()=> dlg.showModal());
+    document.getElementById('closeAbout').addEventListener('click', ()=> dlg.close());
+    document.addEventListener('keydown', (e)=>{ if((e.altKey && (e.key==='a'|| e.key==='A')) || (e.key==='Escape' && dlg.open)) { e.preventDefault(); dlg.open ? dlg.close() : dlg.showModal(); }});
+  </script>
 </body>
 </html>
